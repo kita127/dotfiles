@@ -5,4 +5,5 @@
 ### vim
 ### bash
 ### gitconfig
+### tmux
 ### (screen)
