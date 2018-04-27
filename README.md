@@ -1,9 +1,13 @@
 # dotfiles
-ドットファイル管理用リポジトリ
 
-## 管理対象
+## Getting Started
+ドットファイル管理用リポジトリ
 ### vim
 ### bash
-### gitconfig
+### git
 ### tmux
-### (screen)
+### screen
+
+## Deployment
+1. ホームディレクトリ直下に本リポジトリをクローン<br>
+2. dotfilesLink.sh を実行する<br>
