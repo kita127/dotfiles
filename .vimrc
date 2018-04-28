@@ -157,13 +157,13 @@ set nobackup
 " その他ファイルの出力先変更
 
 " backupfileの出力先
-set backupdir=/home/kitada/tmp
+set backupdir=~/tmp
 
 " swapfileの出力先
-set directory=/home/kitada/tmp
+set directory=~/tmp
 
 " undofileの出力先
-set undodir=/home/kitada/tmp
+set undodir=~/tmp
 
 "文字コード、改行コードをステータスバーに表示する
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
