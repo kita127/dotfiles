@@ -1,5 +1,5 @@
 set encoding=utf8
-set fileencodings=iso-2022-jp,utf8,euc-jp,cp932
+set fileencodings=utf8,iso-2022-jp,euc-jp,cp932
 set ambiwidth=double
 set clipboard=unnamedplus
 
