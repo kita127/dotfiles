@@ -166,3 +166,28 @@ set undodir=~/tmp
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 "
 
+
+" -------------------------------------------------------------------------------
+" dein
+" -------------------------------------------------------------------------------
+" 1. お好みのプラグインを call dein#add() に追加する
+" 2. :source % する
+" 3. :call dein#install() する
+
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+call dein#begin(expand('~/.vim/dein'))
+
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neomru.vim')
+"call dein#add('Shougo/neosnippet')
+call dein#add('tpope/vim-fugitive')
+
+
+call dein#end()
