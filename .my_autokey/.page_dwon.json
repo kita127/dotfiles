@@ -1,5 +1,5 @@
 {
-    "usageCount": 80, 
+    "usageCount": 89, 
     "omitTrigger": false, 
     "prompt": false, 
     "description": "page_dwon", 
@@ -12,7 +12,7 @@
         "triggerInside": false
     }, 
     "hotkey": {
-        "hotKey": "d", 
+        "hotKey": "n", 
         "modifiers": [
             "<meta>"
         ]
