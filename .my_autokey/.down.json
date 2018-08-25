@@ -1,5 +1,5 @@
 {
-    "usageCount": 791, 
+    "usageCount": 925, 
     "omitTrigger": false, 
     "prompt": false, 
     "description": "down", 
@@ -14,7 +14,7 @@
     "hotkey": {
         "hotKey": "j", 
         "modifiers": [
-            "<meta>"
+            "<alt>"
         ]
     }, 
     "modes": [

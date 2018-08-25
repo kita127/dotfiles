@@ -1,5 +1,5 @@
 {
-    "usageCount": 212, 
+    "usageCount": 253, 
     "omitTrigger": false, 
     "prompt": false, 
     "description": "left", 
@@ -14,7 +14,7 @@
     "hotkey": {
         "hotKey": "h", 
         "modifiers": [
-            "<meta>"
+            "<alt>"
         ]
     }, 
     "modes": [

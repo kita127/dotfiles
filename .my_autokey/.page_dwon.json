@@ -12,9 +12,9 @@
         "triggerInside": false
     }, 
     "hotkey": {
-        "hotKey": "n", 
+        "hotKey": "d", 
         "modifiers": [
-            "<meta>"
+            "<alt>"
         ]
     }, 
     "modes": [

@@ -1,5 +1,5 @@
 {
-    "usageCount": 262, 
+    "usageCount": 264, 
     "omitTrigger": false, 
     "prompt": false, 
     "description": "left_click", 
@@ -14,7 +14,7 @@
     "hotkey": {
         "hotKey": "s", 
         "modifiers": [
-            "<super>"
+            "<alt>"
         ]
     }, 
     "modes": [

@@ -14,7 +14,7 @@
     "hotkey": {
         "hotKey": "u", 
         "modifiers": [
-            "<meta>"
+            "<alt>"
         ]
     }, 
     "modes": [

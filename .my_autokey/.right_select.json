@@ -1,8 +1,8 @@
 {
-    "usageCount": 148, 
+    "usageCount": 83, 
     "omitTrigger": false, 
     "prompt": false, 
-    "description": "up", 
+    "description": "right_select", 
     "abbreviation": {
         "wordChars": "[\\w]", 
         "abbreviations": [], 
@@ -12,9 +12,10 @@
         "triggerInside": false
     }, 
     "hotkey": {
-        "hotKey": "k", 
+        "hotKey": "l", 
         "modifiers": [
-            "<alt>"
+            "<alt>", 
+            "<shift>"
         ]
     }, 
     "modes": [

@@ -1,8 +1,8 @@
 {
-    "usageCount": 148, 
+    "usageCount": 0, 
     "omitTrigger": false, 
     "prompt": false, 
-    "description": "up", 
+    "description": "dwon_select", 
     "abbreviation": {
         "wordChars": "[\\w]", 
         "abbreviations": [], 
@@ -12,9 +12,10 @@
         "triggerInside": false
     }, 
     "hotkey": {
-        "hotKey": "k", 
+        "hotKey": "j", 
         "modifiers": [
-            "<alt>"
+            "<alt>", 
+            "<shift>"
         ]
     }, 
     "modes": [
