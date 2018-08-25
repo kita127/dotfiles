@@ -36,14 +36,16 @@ set wildmenu
 set formatoptions+=mM
 
 "IMEをデフォルトでOFFにする
-"set iminsert=0
-"set imsearch=-1
+set iminsert=0
+set imsearch=-1
 
 "挿入モードを抜けたらIMEをOFFにする
 function! ImInActivate()
   call system('fcitx-remote -c')
 endfunction
 inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+
+
 
 
 "---------------------------------------------------------------------------
@@ -60,7 +62,7 @@ set listchars=tab:￫\ ,extends:<,trail:-,eol:↲
 
 
 " 長い行を折り返して表示 (nowrap:折り返さない)
-set nowrap
+set wrap
 " 常にステータス行を表示 (詳細は:he laststatus)
 set laststatus=2
 " コマンドラインの高さ (Windows用gvim使用時はgvimrcを編集すること)
@@ -200,4 +202,13 @@ endif
 " dein end
 " -------------------------------------------------------------------------------
 
+" -------------------------------------------------------------------------------
+" 自作コマンド start
+" -------------------------------------------------------------------------------
+" stylish-haskell を実行
+command! Hfmt %!stylish-haskell
+
+" -------------------------------------------------------------------------------
+" 自作コマンド end
+" -------------------------------------------------------------------------------
 
