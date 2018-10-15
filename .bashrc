@@ -121,7 +121,7 @@ fi
 GOPATH="$HOME/go"
 export GOPATH
 
-PATH="$PATH"
+PATH="$GOPATH/bin:$PATH"
 export PATH
 
 # end 環境変数 --------------------------------------------
