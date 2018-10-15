@@ -21,9 +21,3 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-GOPATH="$HOME/go"
-export GOPATH
-
-# 最新のstackバージョンを適用するために~/.local/binをPATHの先頭に通す
-PATH="~/.local/bin:$PATH"
-export PATH
