@@ -128,10 +128,8 @@ export PATH
 
 # clipboard copy and paste
 # echo 'xxx' | pbcopy
-#    'xxx'をクリップボードにコピー
 #
 # echo `pwd` | pbcopy
-# カレントディレクトリをクリップボードにコピー
 #
 # pbpeast
 #    クリップボードの内容をペースト
