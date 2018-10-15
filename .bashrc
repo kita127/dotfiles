@@ -132,7 +132,6 @@ export PATH
 # echo `pwd` | pbcopy
 #
 # pbpeast
-#    クリップボードの内容をペースト
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
