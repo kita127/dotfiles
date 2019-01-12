@@ -117,14 +117,6 @@ fi
 # kitada
 # #####################################3
 
-# start 環境変数 --------------------------------------------
-GOPATH="$HOME/go"
-export GOPATH
-
-PATH="$GOPATH/bin:$PATH"
-export PATH
-
-# end 環境変数 --------------------------------------------
 
 # clipboard copy and paste
 # echo 'xxx' | pbcopy

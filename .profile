@@ -21,3 +21,11 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# start 環境変数 --------------------------------------------
+GOPATH="$HOME/go"
+export GOPATH
+
+PATH="$GOPATH/bin:~/.local/bin:$PATH"
+export PATH
+
+# end 環境変数 --------------------------------------------

@@ -205,8 +205,9 @@ endif
 " -------------------------------------------------------------------------------
 " 自作コマンド start
 " -------------------------------------------------------------------------------
-" 自動フォーマッター for haskell
-au BufWritePost *.hs %!stylish-haskell
+" 自動フォーマッター for haskell or コマンド
+"au BufWritePost *.hs %!stylish-haskell
+command Hfmt %!stylish-haskell
 
 " 自動フォーマッター for golang
 au BufWritePost *.go !gofmt -w %
