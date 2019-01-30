@@ -191,6 +191,10 @@ call dein#add('Shougo/neomru.vim')
 "call dein#add('Shougo/neosnippet')
 call dein#add('tpope/vim-fugitive')
 
+" マークダウンビューワー
+" :Minidown で実行
+call dein#add('iwataka/minidown.vim')
+
 
 call dein#end()
 
