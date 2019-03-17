@@ -195,6 +195,8 @@ call dein#add('tpope/vim-fugitive')
 " :Minidown で実行
 call dein#add('iwataka/minidown.vim')
 
+" ctrlp
+call dein#add('ctrlpvim/ctrlp.vim')
 
 call dein#end()
 
