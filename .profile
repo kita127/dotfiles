@@ -25,7 +25,7 @@ fi
 GOPATH="$HOME/go"
 export GOPATH
 
-PATH="$GOPATH/bin:~/.local/bin:$PATH"
+PATH="$GOPATH/bin:$HOME/.local/bin:$PATH"
 export PATH
 
 # end 環境変数 --------------------------------------------
