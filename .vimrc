@@ -198,6 +198,9 @@ call dein#add('iwataka/minidown.vim')
 " ctrlp
 call dein#add('ctrlpvim/ctrlp.vim')
 
+" vim-go
+call dein#add('fatih/vim-go')
+
 call dein#end()
 
 " 何故かdeinの設定でsyntax hilightが崩れるので再設定
