@@ -211,10 +211,26 @@ endif
 
 " vim-plug start ----------------------------------------------------------------
 " vim-go dein ではうまいこと機能してくれないので vim-plug で管理
+" プラグイン追加後以下を実行
+" :PlugInstall
+"
 call plug#begin()
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 call plug#end()
+
 " vim-plug end " ----------------------------------------------------------------
+
+" gopls
+" Language Server Protcol for Go
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
 
 " -------------------------------------------------------------------------------
 " 自作コマンド start
