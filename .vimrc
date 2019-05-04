@@ -199,6 +199,12 @@ call dein#add('iwataka/minidown.vim')
 " ctrlp
 call dein#add('ctrlpvim/ctrlp.vim')
 
+" LSP マネージャー
+call dein#add('autozimu/LanguageClient-neovim', {
+    \ 'rev': 'next',
+    \ 'build': 'bash install.sh',
+    \ })
+
 
 call dein#end()
 
@@ -232,6 +238,42 @@ if executable('gopls')
         \ 'whitelist': ['go'],
         \ })
 endif
+
+" ----------------------------------------------------------------------------------
+" Haskell IDE Engine & LanguageClient-neovim start ---------------------------------
+" https://github.com/haskell/haskell-ide-engine
+" https://github.com/autozimu/LanguageClient-neovim
+set rtp+=~/.vim/pack/dein/start/LanguageClient-neovim
+let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+
+"  (<C-x><C-o>) to open up the auto-complete menu,
+"  or for asynchronous auto-completion, follow the setup instructions on LanguageClient.
+
+" You'll probably want to add some mappings for common commands:
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
+map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
+map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
+map <Leader>lb :call LanguageClient#textDocument_references()<CR>
+map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
+map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+
+" If you'd like diagnostics to be highlighted,
+" add a highlight group for ALEError/ALEWarning/ALEInfo,
+" or customize g:LanguageClient_diagnosticsDisplay:
+hi link ALEError Error
+hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+hi link ALEWarning Warning
+hi link ALEInfo SpellCap
+
+" If you're finding that the server isn't starting at the correct project root,
+" it may also be helpful to also specify root markers:
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+
+
+" Haskell IDE Engine & LanguageClient-neovim end ---------------------------------
+" ----------------------------------------------------------------------------------
 
 " -------------------------------------------------------------------------------
 " 自作コマンド start
