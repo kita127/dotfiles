@@ -95,14 +95,15 @@ nnoremap <silent> ]B    :blast<CR>
 "ノーマルモードでクイックフィックスリストをカーソルキーで移動
 nnoremap <silent> [c :cprevious<CR>zz
 nnoremap <silent> ]c :cnext<CR>zz
-nnoremap <silent> [C :cfirst<CR>zz
-nnoremap <silent> ]C :clast<CR>zz
+nnoremap <silent> [C :colder<CR>zz
+nnoremap <silent> ]C :cnewer<CR>zz
 
-"ウィンドウサイズの変更
-nnoremap <silent> <C-UP>    <C-w>+
-nnoremap <silent> <C-DOWN>  <C-w>-
-nnoremap <silent> <C-LEFT>  <C-w>>
-nnoremap <silent> <C-RIGHT> <C-w><
+nnoremap <silent> <Up>    :cprevious<CR>zz
+nnoremap <silent> <Down>  :cnext<CR>zz
+nnoremap <silent> <Left>  :colder<CR>zz
+nnoremap <silent> <Right> :cnewer<CR>zz
+
+
 "
 "***********************************************
 "挿入モード
