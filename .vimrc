@@ -283,6 +283,8 @@ let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 "au BufWritePost *.hs %!stylish-haskell
 command Hfmt %!stylish-haskell
 
+command Evimrc e $HOME/.vimrc
+
 " 自動フォーマッター for golang
 au BufWritePost *.go !gofmt -w %
 
