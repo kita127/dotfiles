@@ -262,10 +262,11 @@ map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
 " If you'd like diagnostics to be highlighted,
 " add a highlight group for ALEError/ALEWarning/ALEInfo,
 " or customize g:LanguageClient_diagnosticsDisplay:
-hi link ALEError Error
-hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
-hi link ALEWarning Warning
-hi link ALEInfo SpellCap
+
+"hi link ALEError Error
+"hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+"hi link ALEWarning Warning
+"hi link ALEInfo SpellCap
 
 " If you're finding that the server isn't starting at the correct project root,
 " it may also be helpful to also specify root markers:
