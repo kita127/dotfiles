@@ -29,3 +29,5 @@ PATH="$GOPATH/bin:$HOME/.local/bin:$PATH"
 export PATH
 
 # end 環境変数 --------------------------------------------
+
+export PATH="$HOME/.cargo/bin:$PATH"
