@@ -86,11 +86,11 @@ set hlsearch
 "隠しファイル有
 set hidden
 "
-"バッファ移動
-nnoremap <silent> [b    :bprevious<CR>
-nnoremap <silent> ]b    :bnext<CR>
-nnoremap <silent> [B    :bfirst<CR>
-nnoremap <silent> ]B    :blast<CR>
+"ローケーションリスト移動
+nnoremap <silent> [b :lprevious<CR>zz
+nnoremap <silent> ]b :lnext<CR>zz
+nnoremap <silent> [B :lolder<CR>zz
+nnoremap <silent> ]B :lnewer<CR>zz
 "
 "ノーマルモードでクイックフィックスリストをカーソルキーで移動
 nnoremap <silent> [c :cprevious<CR>zz
@@ -246,7 +246,7 @@ let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 " リストは標準で quickfix を選択
 " Default: If fzf is loaded, use "fzf", otherwise use "location-list".
 " Valid options: "fzf" | "quickfix" | "location-list"
-let g:LanguageClient_selectionUI = "quickfix"
+let g:LanguageClient_selectionUI = "location-list"
 
 " https://github.com/haskell/haskell-ide-engine
 let g:LanguageClient_serverCommands = {
