@@ -243,6 +243,11 @@ set rtp+=~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim_next
 " it may also be helpful to also specify root markers:
 let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 
+" リストは標準で quickfix を選択
+" Default: If fzf is loaded, use "fzf", otherwise use "location-list".
+" Valid options: "fzf" | "quickfix" | "location-list"
+let g:LanguageClient_selectionUI = "quickfix"
+
 " https://github.com/haskell/haskell-ide-engine
 let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper'],
