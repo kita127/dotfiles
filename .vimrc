@@ -232,7 +232,7 @@ syntax enable
 
 
 " ----------------------------------------------------------------------------------
-" Haskell IDE Engine & LanguageClient-neovim start
+" LanguageClient-neovim start
 " ----------------------------------------------------------------------------------
 "
 " https://github.com/autozimu/LanguageClient-neovim
