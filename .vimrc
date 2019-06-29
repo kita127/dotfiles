@@ -281,6 +281,7 @@ map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 
 " -------------------------------------------------------------------------------
 " 自作コマンド start
+" -------------------------------------------------------------------------------
 
 " 自動フォーマッター for haskell or コマンド
 "au BufWritePost *.hs %!stylish-haskell
@@ -288,9 +289,7 @@ command Hfmt %!stylish-haskell
 
 command Evimrc e $HOME/.vimrc
 
-" 自動フォーマッター for golang
-au BufWritePost *.go !gofmt -w %
-
+" -------------------------------------------------------------------------------
 " 自作コマンド end
 " -------------------------------------------------------------------------------
 
