@@ -174,10 +174,14 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 
 " -------------------------------------------------------------------------------
 " dein start
+" -------------------------------------------------------------------------------
 "
 " 1. お好みのプラグインを call dein#add() に追加する
 " 2. :source % する
 " 3. :call dein#install() する
+
+" update
+" :call dein#update()
 
 
 if &compatible
@@ -197,22 +201,21 @@ if dein#load_state('~/.cache/dein')
   endif
 
 
-    " git と連携
-    call dein#add('tpope/vim-fugitive')
+  " git と連携
+  call dein#add('tpope/vim-fugitive')
 
-    " マークダウンビューワー
-    " :Minidown で実行
-    call dein#add('iwataka/minidown.vim')
+  " マークダウンビューワー
+  " :Minidown で実行
+  call dein#add('iwataka/minidown.vim')
 
-    " ctrlp
-    call dein#add('ctrlpvim/ctrlp.vim')
+  " ctrlp
+  call dein#add('ctrlpvim/ctrlp.vim')
 
-    " LSP マネージャー
-    call dein#add('autozimu/LanguageClient-neovim', {
-        \ 'rev': 'next',
-        \ 'build': 'bash install.sh',
-        \ })
-
+  " LSP クライアント
+  call dein#add('autozimu/LanguageClient-neovim', {
+      \ 'rev': 'next',
+      \ 'build': 'bash install.sh',
+      \ })
 
   call dein#end()
   call dein#save_state()
@@ -223,40 +226,24 @@ filetype plugin indent on
 syntax enable
 
 
-"
+" -------------------------------------------------------------------------------
 " dein end
 " -------------------------------------------------------------------------------
 
-" vim-plug start ----------------------------------------------------------------
-" vim-go dein ではうまいこと機能してくれないので vim-plug で管理
-" プラグイン追加後以下を実行
-" :PlugInstall
-"
-"call plug#begin()
-"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-"Plug 'prabirshrestha/async.vim'
-"Plug 'prabirshrestha/vim-lsp'
-"call plug#end()
-"
-"" vim-plug end " ----------------------------------------------------------------
-"
-"" gopls
-"" Language Server Protcol for Go
-"if executable('gopls')
-"    au User lsp_setup call lsp#register_server({
-"        \ 'name': 'gopls',
-"        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-"        \ 'whitelist': ['go'],
-"        \ })
-"endif
 
 " ----------------------------------------------------------------------------------
-" Haskell IDE Engine & LanguageClient-neovim start ---------------------------------
+" Haskell IDE Engine & LanguageClient-neovim start
+" ----------------------------------------------------------------------------------
 "
-" https://github.com/haskell/haskell-ide-engine
 " https://github.com/autozimu/LanguageClient-neovim
+
 set rtp+=~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim_next
 
+" If you're finding that the server isn't starting at the correct project root,
+" it may also be helpful to also specify root markers:
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+
+" https://github.com/haskell/haskell-ide-engine
 let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper'],
     \ 'go': ['gopls'],
@@ -286,12 +273,10 @@ map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 "hi link ALEWarning Warning
 "hi link ALEInfo SpellCap
 
-" If you're finding that the server isn't starting at the correct project root,
-" it may also be helpful to also specify root markers:
-let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 
 
-" Haskell IDE Engine & LanguageClient-neovim end ---------------------------------
+" ----------------------------------------------------------------------------------
+" LanguageClient-neovim end
 " ----------------------------------------------------------------------------------
 
 " -------------------------------------------------------------------------------
