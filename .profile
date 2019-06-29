@@ -25,9 +25,12 @@ fi
 GOPATH="$HOME/go"
 export GOPATH
 
-PATH="$GOPATH/bin:$HOME/.local/bin:$PATH"
-export PATH
+export PATH="$GOPATH/bin:$HOME/.local/bin:$PATH"
 
+# go
+export PATH="$PATH:/usr/local/go/bin"
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
 # end 環境変数 --------------------------------------------
 
-export PATH="$HOME/.cargo/bin:$PATH"
