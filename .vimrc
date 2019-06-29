@@ -232,44 +232,50 @@ syntax enable
 " プラグイン追加後以下を実行
 " :PlugInstall
 "
-call plug#begin()
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-call plug#end()
-
-" vim-plug end " ----------------------------------------------------------------
-
-" gopls
-" Language Server Protcol for Go
-if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
-        \ 'whitelist': ['go'],
-        \ })
-endif
+"call plug#begin()
+"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+"Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/vim-lsp'
+"call plug#end()
+"
+"" vim-plug end " ----------------------------------------------------------------
+"
+"" gopls
+"" Language Server Protcol for Go
+"if executable('gopls')
+"    au User lsp_setup call lsp#register_server({
+"        \ 'name': 'gopls',
+"        \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+"        \ 'whitelist': ['go'],
+"        \ })
+"endif
 
 " ----------------------------------------------------------------------------------
 " Haskell IDE Engine & LanguageClient-neovim start ---------------------------------
 "
 " https://github.com/haskell/haskell-ide-engine
 " https://github.com/autozimu/LanguageClient-neovim
-set rtp+=~/.vim/pack/dein/start/LanguageClient-neovim
-let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+set rtp+=~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim_next
+
+let g:LanguageClient_serverCommands = {
+    \ 'haskell': ['hie-wrapper'],
+    \ 'go': ['gopls'],
+    \ }
+
+
 
 "  (<C-x><C-o>) to open up the auto-complete menu,
 "  or for asynchronous auto-completion, follow the setup instructions on LanguageClient.
 
 " You'll probably want to add some mappings for common commands:
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
-map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
-map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
-map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>lb :call LanguageClient#textDocument_references()<CR>
-map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+map <Leader>k :call LanguageClient#textDocument_hover()<CR>
+map <Leader>g :call LanguageClient#textDocument_definition()<CR>
+map <Leader>r :call LanguageClient#textDocument_rename()<CR>
+map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
+map <Leader>b :call LanguageClient#textDocument_references()<CR>
+map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
+map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 
 " If you'd like diagnostics to be highlighted,
 " add a highlight group for ALEError/ALEWarning/ALEInfo,
