@@ -223,6 +223,10 @@ if dein#load_state('~/.cache/dein')
       \ 'build': 'bash install.sh',
       \ })
 
+  " fzf.vim
+  call dein#add('junegunn/fzf.vim')
+
+
   call dein#end()
   call dein#save_state()
 endif
@@ -301,6 +305,13 @@ map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 
 " If installed using git
 set rtp+=~/.fzf
+
+" fzf-vim の代表コマンド
+" GFiles    - git ls-files で表示されるやつ対象
+" Gfiles?   - git status で表示
+" Buffers   - buffer list
+" BLines    - 全行検索
+" Marks     - mark 検索
 
 " ----------------------------------------------------------------------------------
 " fzf end
