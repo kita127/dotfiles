@@ -46,6 +46,12 @@ endfunction
 inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 
 
+" vimdiffの色設定
+highlight DiffAdd    cterm=bold ctermfg=0 ctermbg=2
+highlight DiffDelete cterm=bold ctermfg=0 ctermbg=4
+highlight DiffChange cterm=bold ctermfg=0 ctermbg=3
+highlight DiffText   cterm=bold ctermfg=0 ctermbg=1
+
 
 
 "---------------------------------------------------------------------------
