@@ -128,12 +128,23 @@ fi
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
+# --------------------------------------
+# stack start
+# --------------------------------------
 # stack(Haskell tool)
 alias ghc='stack ghc --'
 alias ghci='stack ghci --'
 alias runhaskell='stack runhaskell --'
 alias doctest='stack exec doctest'
 alias hlint='stack exec hlint'
+
+# stack サブコマンドの補完
+# stack のサブコマンド以外の補完が効かないため無効
+# eval "$(stack --bash-completion-script stack)"
+
+# --------------------------------------
+# stack end
+# --------------------------------------
 
 # --------------------------------------
 # fzf start
