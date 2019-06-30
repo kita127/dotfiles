@@ -256,7 +256,7 @@ let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 " リストは標準で quickfix を選択
 " Default: If fzf is loaded, use "fzf", otherwise use "location-list".
 " Valid options: "fzf" | "quickfix" | "location-list"
-let g:LanguageClient_selectionUI = "fzf"
+let g:LanguageClient_selectionUI = "location-list"
 
 " https://github.com/haskell/haskell-ide-engine
 let g:LanguageClient_serverCommands = {
