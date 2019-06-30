@@ -134,3 +134,6 @@ alias ghci='stack ghci --'
 alias runhaskell='stack runhaskell --'
 alias doctest='stack exec doctest'
 alias hlint='stack exec hlint'
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
