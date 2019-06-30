@@ -323,9 +323,9 @@ set rtp+=~/.fzf
 
 " 自動フォーマッター for haskell or コマンド
 "au BufWritePost *.hs %!stylish-haskell
-command Hfmt %!stylish-haskell
+command! Hfmt %!stylish-haskell
 
-command Evimrc e $HOME/.vimrc
+command! Evimrc e $HOME/.vimrc
 
 " -------------------------------------------------------------------------------
 " 自作コマンド end
