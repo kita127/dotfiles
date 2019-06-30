@@ -330,6 +330,7 @@ nnoremap <silent> ,m :Mark<CR>
 " 自動フォーマッター for haskell or コマンド
 "au BufWritePost *.hs %!stylish-haskell
 command! Hfmt %!stylish-haskell
+command! Goimports !goimports -w %
 
 command! Evimrc e $HOME/.vimrc
 
