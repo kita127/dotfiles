@@ -313,7 +313,7 @@ set rtp+=~/.fzf
 " Buffers   - buffer list
 " BLines    - 全行検索
 " Marks     - mark 検索
-nnoremap <silent> <C-p> :GFiles<CR>
+nnoremap <silent> ,f :GFiles<CR>
 nnoremap <silent> ,F :GFiles?<CR>
 nnoremap <silent> ,b :Buffers<CR>
 nnoremap <silent> ,l :BLines<CR>
