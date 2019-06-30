@@ -135,5 +135,19 @@ alias runhaskell='stack runhaskell --'
 alias doctest='stack exec doctest'
 alias hlint='stack exec hlint'
 
-# fzf
+# --------------------------------------
+# fzf start
+# --------------------------------------
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# open vim from fzf
+# only for git managed files
+fvim() {
+  files=$(git ls-files) &&
+  selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+  vim $selected_files
+}
+
+# --------------------------------------
+# fzf end
+# --------------------------------------
