@@ -262,6 +262,7 @@ let g:LanguageClient_selectionUI = "location-list"
 let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper'],
     \ 'go': ['gopls'],
+    \ 'c': ['clangd-7'],
     \ }
 
 
