@@ -95,17 +95,21 @@ set hlsearch
 set hidden
 "
 "ローケーションリスト移動
-nnoremap <silent> [b :lprevious<CR>zz
-nnoremap <silent> ]b :lnext<CR>zz
-nnoremap <silent> [B :lolder<CR>zz
-nnoremap <silent> ]B :lnewer<CR>zz
-"
-"ノーマルモードでクイックフィックスリストをカーソルキーで移動
-nnoremap <silent> [c :cprevious<CR>zz
-nnoremap <silent> ]c :cnext<CR>zz
-nnoremap <silent> [C :colder<CR>zz
-nnoremap <silent> ]C :cnewer<CR>zz
+"nnoremap <silent> [b :lprevious<CR>zz
+"nnoremap <silent> ]b :lnext<CR>zz
+"nnoremap <silent> [B :lolder<CR>zz
+"nnoremap <silent> ]B :lnewer<CR>zz
+nnoremap <silent> <C-k>    :lprevious<CR>zz
+nnoremap <silent> <C-j>    :lnext<CR>zz
+nnoremap <silent> <C-h>    :lolder<CR>zz
+nnoremap <silent> <C-l>    :lnewer<CR>zz
 
+"ノーマルモードでクイックフィックスリストをカーソルキーで移動
+" diff のコマンドと被るのでやめる
+"nnoremap <silent> [c :cprevious<CR>zz
+"nnoremap <silent> ]c :cnext<CR>zz
+"nnoremap <silent> [C :colder<CR>zz
+"nnoremap <silent> ]C :cnewer<CR>zz
 nnoremap <silent> <Up>    :cprevious<CR>zz
 nnoremap <silent> <Down>  :cnext<CR>zz
 nnoremap <silent> <Left>  :colder<CR>zz
@@ -291,8 +295,7 @@ let g:LanguageClient_serverCommands = {
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 map <Leader>k :call LanguageClient#textDocument_hover()<CR>
 map <Leader>g :call LanguageClient#textDocument_definition()<CR>
-" mark.vim とかぶっているのでコメントアウト
-"map <Leader>r :call LanguageClient#textDocument_rename()<CR>
+map <Leader>R :call LanguageClient#textDocument_rename()<CR>
 map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
 map <Leader>b :call LanguageClient#textDocument_references()<CR>
 map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
