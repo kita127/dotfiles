@@ -113,9 +113,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# #####################################3
+# ########################################################################
 # kitada
-# #####################################3
+# ########################################################################
 
 
 # clipboard copy and paste
@@ -159,8 +159,8 @@ fvim() {
   vim $selected_files
 }
 
-# fd - cd to selected directory
-fd() {
+# fcd - cd to selected directory
+fcd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
