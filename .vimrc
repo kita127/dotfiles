@@ -226,6 +226,8 @@ if dein#load_state('~/.cache/dein')
   " fzf.vim
   call dein#add('junegunn/fzf.vim')
 
+  " mark.vim
+  call dein#add('kita127/mark.vim')
 
   call dein#end()
   call dein#save_state()
@@ -274,7 +276,8 @@ let g:LanguageClient_serverCommands = {
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 map <Leader>k :call LanguageClient#textDocument_hover()<CR>
 map <Leader>g :call LanguageClient#textDocument_definition()<CR>
-map <Leader>r :call LanguageClient#textDocument_rename()<CR>
+" mark.vim とかぶっているのでコメントアウト
+"map <Leader>r :call LanguageClient#textDocument_rename()<CR>
 map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
 map <Leader>b :call LanguageClient#textDocument_references()<CR>
 map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
