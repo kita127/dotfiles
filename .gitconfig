@@ -4,8 +4,5 @@
 [core]
 	quotepath = false
 
-# log に情報を盛りだくさんにする
 [alias]
     glog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=format:'%c' --all --graph
-[ghq]
-	root = /home/kitada/go/src
