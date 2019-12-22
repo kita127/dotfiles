@@ -151,6 +151,8 @@ alias hlint='stack exec hlint'
 # --------------------------------------
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+alias fhi='history | fzf'
+
 # open vim from fzf
 # only for git managed files
 fvim() {
@@ -166,7 +168,6 @@ fcd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
-
 
 
 
