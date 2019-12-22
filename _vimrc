@@ -356,6 +356,8 @@ nnoremap <silent> ,m :Mark<CR>
 command! Hfmt %!stylish-haskell
 command! Goimports !goimports -w %
 
+command! Evimrc e $HOME/.vimrc
+command! E e %:h
 
 " -------------------------------------------------------------------------------
 " 自作コマンド end
