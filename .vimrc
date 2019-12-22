@@ -9,7 +9,7 @@ set clipboard=unnamedplus
 " 検索の挙動に関する設定:
 "
 " 検索時に大文字小文字を無視 (noignorecase:無視しない)
-set noignorecase
+set ignorecase
 " 大文字小文字の両方が含まれている場合は大文字小文字を区別
 set smartcase
 
@@ -68,7 +68,8 @@ set listchars=tab:￫\ ,extends:<,trail:-,eol:↲
 
 
 " 長い行を折り返して表示 (nowrap:折り返さない)
-set wrap
+"set wrap
+set nowrap
 " 常にステータス行を表示 (詳細は:he laststatus)
 set laststatus=2
 " コマンドラインの高さ (Windows用gvim使用時はgvimrcを編集すること)
@@ -97,10 +98,10 @@ set hidden
 "nnoremap <silent> ]b :lnext<CR>zz
 "nnoremap <silent> [B :lolder<CR>zz
 "nnoremap <silent> ]B :lnewer<CR>zz
-nnoremap <silent> <C-k>    :lprevious<CR>zz
-nnoremap <silent> <C-j>    :lnext<CR>zz
-nnoremap <silent> <C-h>    :lolder<CR>zz
-nnoremap <silent> <C-l>    :lnewer<CR>zz
+nnoremap <silent> <Up>       :lprevious<CR>zz
+nnoremap <silent> <Down>     :lnext<CR>zz
+nnoremap <silent> <Left>     :lolder<CR>zz
+nnoremap <silent> <Right>    :lnewer<CR>zz
 
 "ノーマルモードでクイックフィックスリストをカーソルキーで移動
 " diff のコマンドと被るのでやめる
@@ -108,10 +109,10 @@ nnoremap <silent> <C-l>    :lnewer<CR>zz
 "nnoremap <silent> ]c :cnext<CR>zz
 "nnoremap <silent> [C :colder<CR>zz
 "nnoremap <silent> ]C :cnewer<CR>zz
-nnoremap <silent> <Up>    :cprevious<CR>zz
-nnoremap <silent> <Down>  :cnext<CR>zz
-nnoremap <silent> <Left>  :colder<CR>zz
-nnoremap <silent> <Right> :cnewer<CR>zz
+nnoremap <silent> c<Up>    :cprevious<CR>zz
+nnoremap <silent> c<Down>  :cnext<CR>zz
+nnoremap <silent> c<Left>  :colder<CR>zz
+nnoremap <silent> c<Right> :cnewer<CR>zz
 
 
 "
@@ -319,6 +320,7 @@ set rtp+=~/.fzf
 " Buffers   - buffer list
 " BLines    - 全行検索
 " Marks     - mark 検索
+nnoremap <C-p>       :Files<CR>
 nnoremap <silent> ,f :GFiles<CR>
 nnoremap <silent> ,F :GFiles?<CR>
 nnoremap <silent> ,b :Buffers<CR>
