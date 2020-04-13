@@ -9,7 +9,7 @@ set clipboard=unnamedplus
 " 検索の挙動に関する設定:
 "
 " 検索時に大文字小文字を無視 (noignorecase:無視しない)
-set noignorecase
+set ignorecase
 " 大文字小文字の両方が含まれている場合は大文字小文字を区別
 set smartcase
 
@@ -70,7 +70,8 @@ set listchars=tab:￫\ ,extends:<,trail:-,eol:↲
 
 
 " 長い行を折り返して表示 (nowrap:折り返さない)
-set wrap
+"set wrap
+set nowrap
 " 常にステータス行を表示 (詳細は:he laststatus)
 set laststatus=2
 " コマンドラインの高さ (Windows用gvim使用時はgvimrcを編集すること)
@@ -95,21 +96,25 @@ set hlsearch
 set hidden
 "
 "ローケーションリスト移動
-nnoremap <silent> [b :lprevious<CR>zz
-nnoremap <silent> ]b :lnext<CR>zz
-nnoremap <silent> [B :lolder<CR>zz
-nnoremap <silent> ]B :lnewer<CR>zz
-"
-"ノーマルモードでクイックフィックスリストをカーソルキーで移動
-nnoremap <silent> [c :cprevious<CR>zz
-nnoremap <silent> ]c :cnext<CR>zz
-nnoremap <silent> [C :colder<CR>zz
-nnoremap <silent> ]C :cnewer<CR>zz
+"nnoremap <silent> [b :lprevious<CR>zz
+"nnoremap <silent> ]b :lnext<CR>zz
+"nnoremap <silent> [B :lolder<CR>zz
+"nnoremap <silent> ]B :lnewer<CR>zz
+nnoremap <silent> <Up>       :lprevious<CR>zz
+nnoremap <silent> <Down>     :lnext<CR>zz
+nnoremap <silent> <Left>     :lolder<CR>zz
+nnoremap <silent> <Right>    :lnewer<CR>zz
 
-nnoremap <silent> <Up>    :cprevious<CR>zz
-nnoremap <silent> <Down>  :cnext<CR>zz
-nnoremap <silent> <Left>  :colder<CR>zz
-nnoremap <silent> <Right> :cnewer<CR>zz
+"ノーマルモードでクイックフィックスリストをカーソルキーで移動
+" diff のコマンドと被るのでやめる
+"nnoremap <silent> [c :cprevious<CR>zz
+"nnoremap <silent> ]c :cnext<CR>zz
+"nnoremap <silent> [C :colder<CR>zz
+"nnoremap <silent> ]C :cnewer<CR>zz
+nnoremap <silent> c<Up>    :cprevious<CR>zz
+nnoremap <silent> c<Down>  :cnext<CR>zz
+nnoremap <silent> c<Left>  :colder<CR>zz
+nnoremap <silent> c<Right> :cnewer<CR>zz
 
 
 "
@@ -291,8 +296,7 @@ let g:LanguageClient_serverCommands = {
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 map <Leader>k :call LanguageClient#textDocument_hover()<CR>
 map <Leader>g :call LanguageClient#textDocument_definition()<CR>
-" mark.vim とかぶっているのでコメントアウト
-"map <Leader>r :call LanguageClient#textDocument_rename()<CR>
+map <Leader>R :call LanguageClient#textDocument_rename()<CR>
 map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
 map <Leader>b :call LanguageClient#textDocument_references()<CR>
 map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
@@ -331,6 +335,7 @@ set rtp+=~/.fzf
 " Buffers   - buffer list
 " BLines    - 全行検索
 " Marks     - mark 検索
+nnoremap <C-p>       :Files<CR>
 nnoremap <silent> ,f :GFiles<CR>
 nnoremap <silent> ,F :GFiles?<CR>
 nnoremap <silent> ,b :Buffers<CR>
@@ -351,6 +356,8 @@ nnoremap <silent> ,m :Mark<CR>
 command! Hfmt %!stylish-haskell
 command! Goimports !goimports -w %
 
+command! Evimrc e $HOME/.vimrc
+command! E e %:h
 
 " -------------------------------------------------------------------------------
 " 自作コマンド end
