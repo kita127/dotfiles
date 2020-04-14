@@ -263,6 +263,29 @@ endif
 " -------------------------------------------------------------------------------
 
 
+" -------------------------------------------------------------------------------
+" vim-plug start
+" -------------------------------------------------------------------------------
+
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('$HOME/.vim/plugged')
+
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/iwataka/minidown.vim'
+Plug 'https://github.com/junegunn/fzf.vim'
+Plug 'https://github.com/kita127/mark.vim'
+'
+" Initialize plugin system
+call plug#end()
+
+" -------------------------------------------------------------------------------
+" vim-plug end
+" -------------------------------------------------------------------------------
+
+
+
 " ----------------------------------------------------------------------------------
 " LanguageClient-neovim start
 " ----------------------------------------------------------------------------------
@@ -322,12 +345,15 @@ map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 " fzf start
 " ----------------------------------------------------------------------------------
 
+" fzf-vim を使用するには fzf のリポジトリを clone して rtp に足さないといけな
+" 模様。メンドクサイ
 
 " Once you have fzf installed, you can enable it inside Vim simply by adding
 " the directory to &runtimepath in your Vim configuration file as follows:
 
 " If installed using git
-set rtp+=~/.fzf
+set rtp+=$HOME\go\src\github.com\junegunn\fzf
+
 
 " fzf-vim の代表コマンド
 " GFiles    - git ls-files で表示されるやつ対象
