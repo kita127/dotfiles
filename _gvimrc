@@ -1,3 +1,9 @@
 colorscheme desert
 set guifont=MS_Gothic:h9:cSHIFTJIS
 set guifontwide=MS_Gothic:h9
+
+" IME によってカーソルの色を変える
+if has('multi_byte_ime')
+    highlight Cursor guifg=NONE guibg=Green
+    highlight CursorIM guifg=NONE guibg=Purple
+endif
