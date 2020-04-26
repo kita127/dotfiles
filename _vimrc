@@ -276,6 +276,8 @@ map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 " If installed using git
 set rtp+=$HOME\go\src\github.com\junegunn\fzf
 
+" Empty value to disable preview window altogether
+let g:fzf_preview_window = ''
 
 " fzf-vim の代表コマンド
 " GFiles    - git ls-files で表示されるやつ対象
