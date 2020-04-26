@@ -139,6 +139,10 @@ nnoremap <silent> c<Right> :cnewer<CR>zz
 "挿入モード時Ctr+cで自動で/*  */を出力
 inoremap <C-c> /*  */<Left><Left><Left>
 
+" Ctrl+^ で IME 切り替え
+inoremap <C-Space> <C-^>
+
+
 
 "***********************************************
 "コマンドモード
@@ -148,6 +152,8 @@ inoremap <C-c> /*  */<Left><Left><Left>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" Ctrl+^ で IME 切り替え
+cnoremap <C-Space> <C-^>
 
 "***********************************************
 "その他
@@ -316,7 +322,7 @@ let g:LanguageClient_serverCommands = {
 "  or for asynchronous auto-completion, follow the setup instructions on LanguageClient.
 
 " You'll probably want to add some mappings for common commands:
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+"nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 map <Leader>k :call LanguageClient#textDocument_hover()<CR>
 map <Leader>g :call LanguageClient#textDocument_definition()<CR>
 map <Leader>R :call LanguageClient#textDocument_rename()<CR>
