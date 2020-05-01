@@ -194,11 +194,14 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('$HOME/.vim/plugged')
 
+Plug 'https://github.com/kita127/mark.vim'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/iwataka/minidown.vim'
 Plug 'https://github.com/junegunn/fzf.vim'
-Plug 'https://github.com/kita127/mark.vim'
-'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 " Initialize plugin system
 call plug#end()
 
@@ -206,61 +209,25 @@ call plug#end()
 " vim-plug end
 " -------------------------------------------------------------------------------
 
-
-
-" ----------------------------------------------------------------------------------
-" LanguageClient-neovim start
-" ----------------------------------------------------------------------------------
-"
-" https://github.com/autozimu/LanguageClient-neovim
-
-set rtp+=~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim_next
-
-" If you're finding that the server isn't starting at the correct project root,
-" it may also be helpful to also specify root markers:
-let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
-
-" リストは標準で quickfix を選択
-" Default: If fzf is loaded, use "fzf", otherwise use "location-list".
-" Valid options: "fzf" | "quickfix" | "location-list"
-let g:LanguageClient_selectionUI = "location-list"
-
-" https://github.com/haskell/haskell-ide-engine
-let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['hie-wrapper'],
-    \ 'go': ['gopls'],
-    \ 'c': ['clangd-7'],
-    \ }
-
-
-
-"  (<C-x><C-o>) to open up the auto-complete menu,
-"  or for asynchronous auto-completion, follow the setup instructions on LanguageClient.
+" -------------------------------------------------------------------------------
+" vim-lsp start
+" -------------------------------------------------------------------------------
 
 " You'll probably want to add some mappings for common commands:
-"nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-map <Leader>k :call LanguageClient#textDocument_hover()<CR>
-map <Leader>g :call LanguageClient#textDocument_definition()<CR>
-map <Leader>R :call LanguageClient#textDocument_rename()<CR>
-map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>b :call LanguageClient#textDocument_references()<CR>
-map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
+map <Leader>k <plug>(lsp-hover)
+map <Leader>g <plug>(lsp-definition)
+map <c-w><Leader>g :split<CR><plug>(lsp-definition)
+map <Leader>R <plug>(lsp-rename)
+map <Leader>f <plug>(lsp-document-format)
+map <Leader>b <plug>(lsp-references)
+map <c-w><Leader>b :split<CR><plug>(lsp-references)
+map <Leader>d <plug>(lsp-document-diagnostics)
+map <Leader>t <plug>(lsp-type-definition)
+map <Leader>a <plug>(lsp-code-action)
 
-" If you'd like diagnostics to be highlighted,
-" add a highlight group for ALEError/ALEWarning/ALEInfo,
-" or customize g:LanguageClient_diagnosticsDisplay:
-
-"hi link ALEError Error
-"hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
-"hi link ALEWarning Warning
-"hi link ALEInfo SpellCap
-
-
-
-" ----------------------------------------------------------------------------------
-" LanguageClient-neovim end
-" ----------------------------------------------------------------------------------
+" -------------------------------------------------------------------------------
+" vim-lsp end
+" -------------------------------------------------------------------------------
 
 
 " ----------------------------------------------------------------------------------
