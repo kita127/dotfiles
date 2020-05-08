@@ -194,6 +194,7 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('$HOME/.vim/plugged')
 
+Plug 'https://github.com/junegunn/vim-plug'
 Plug 'https://github.com/kita127/mark.vim'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/iwataka/minidown.vim'
