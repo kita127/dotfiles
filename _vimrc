@@ -204,6 +204,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'https://github.com/tyru/open-browser.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -265,6 +266,18 @@ nnoremap <silent> ,m :Mark<CR>
 
 " ----------------------------------------------------------------------------------
 " fzf end
+" ----------------------------------------------------------------------------------
+
+" ----------------------------------------------------------------------------------
+" open browser start
+" ----------------------------------------------------------------------------------
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+nnoremap <Leader>o :<C-u>execute "OpenBrowser" "file:///" . expand('%:p:gs?\\?/?')<CR>
+
+" ----------------------------------------------------------------------------------
+" open browser end
 " ----------------------------------------------------------------------------------
 
 " -------------------------------------------------------------------------------
