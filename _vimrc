@@ -111,10 +111,10 @@ nnoremap <silent> <Right>    :lnewer<CR>zz
 "nnoremap <silent> ]c :cnext<CR>zz
 "nnoremap <silent> [C :colder<CR>zz
 "nnoremap <silent> ]C :cnewer<CR>zz
-nnoremap <silent> c<Up>    :cprevious<CR>zz
-nnoremap <silent> c<Down>  :cnext<CR>zz
-nnoremap <silent> c<Left>  :colder<CR>zz
-nnoremap <silent> c<Right> :cnewer<CR>zz
+nnoremap <silent> <C-Up>    :cprevious<CR>zz
+nnoremap <silent> <C-Down>  :cnext<CR>zz
+nnoremap <silent> <C-Left>  :colder<CR>zz
+nnoremap <silent> <C-Right> :cnewer<CR>zz
 
 
 "
@@ -201,6 +201,8 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " Initialize plugin system
 call plug#end()
