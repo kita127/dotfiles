@@ -39,6 +39,9 @@ set formatoptions+=mM
 set iminsert=0
 set imsearch=-1
 
+"全角崩れ防止
+set ambiwidth=double
+
 "挿入モードを抜けたらIMEをOFFにする
 function! ImInActivate()
   call system('fcitx-remote -c')
@@ -84,6 +87,8 @@ set title
 " 検索ハイライト
 set hlsearch
 
+" インクリメンタルサーチ
+set incsearch
 
 "
 "***********************************************
@@ -93,11 +98,13 @@ set hlsearch
 "隠しファイル有
 set hidden
 "
+" Buffer 移動
+nnoremap <silent> [b :bnext<CR>
+nnoremap <silent> ]b :bprevious<CR>
+" nnoremap <silent> [B :lolder<CR>zz
+" nnoremap <silent> ]B :lnewer<CR>zz
+
 "ローケーションリスト移動
-"nnoremap <silent> [b :lprevious<CR>zz
-"nnoremap <silent> ]b :lnext<CR>zz
-"nnoremap <silent> [B :lolder<CR>zz
-"nnoremap <silent> ]B :lnewer<CR>zz
 nnoremap <silent> <Up>       :lprevious<CR>zz
 nnoremap <silent> <Down>     :lnext<CR>zz
 nnoremap <silent> <Left>     :lolder<CR>zz
@@ -109,10 +116,10 @@ nnoremap <silent> <Right>    :lnewer<CR>zz
 "nnoremap <silent> ]c :cnext<CR>zz
 "nnoremap <silent> [C :colder<CR>zz
 "nnoremap <silent> ]C :cnewer<CR>zz
-nnoremap <silent> c<Up>    :cprevious<CR>zz
-nnoremap <silent> c<Down>  :cnext<CR>zz
-nnoremap <silent> c<Left>  :colder<CR>zz
-nnoremap <silent> c<Right> :cnewer<CR>zz
+" nnoremap <silent> c<Up>    :cprevious<CR>zz
+" nnoremap <silent> c<Down>  :cnext<CR>zz
+" nnoremap <silent> c<Left>  :colder<CR>zz
+" nnoremap <silent> c<Right> :cnewer<CR>zz
 
 
 "
@@ -211,16 +218,12 @@ if dein#load_state('~/.cache/dein')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
-
   " git と連携
   call dein#add('tpope/vim-fugitive')
 
   " マークダウンビューワー
   " :Minidown で実行
   call dein#add('iwataka/minidown.vim')
-
-  " ctrlp
-  call dein#add('ctrlpvim/ctrlp.vim')
 
   " LSP クライアント
   call dein#add('autozimu/LanguageClient-neovim', {
@@ -233,6 +236,8 @@ if dein#load_state('~/.cache/dein')
 
   " mark.vim
   call dein#add('kita127/mark.vim')
+
+  call dein#add('cocopon/vaffle.vim')
 
   call dein#end()
   call dein#save_state()
@@ -284,6 +289,7 @@ map <Leader>g :call LanguageClient#textDocument_definition()<CR>
 map <Leader>R :call LanguageClient#textDocument_rename()<CR>
 map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
 map <Leader>b :call LanguageClient#textDocument_references()<CR>
+map <Leader>t :call LanguageClient#textDocument_typeDefinition()<CR>
 map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
 map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 
@@ -359,6 +365,7 @@ command! Goimports !goimports -w %
 command! Evimrc e $HOME/.vimrc
 command! E e %:h
 
+tnoremap <silent> <C-[> <C-w>N
 " -------------------------------------------------------------------------------
 " 自作コマンド end
 " -------------------------------------------------------------------------------
