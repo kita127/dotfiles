@@ -199,11 +199,6 @@ Plug 'https://github.com/kita127/mark.vim'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/iwataka/minidown.vim'
 Plug 'https://github.com/junegunn/fzf.vim'
-"Plug 'prabirshrestha/async.vim'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'https://github.com/tyru/open-browser.vim'
 
 Plug 'autozimu/LanguageClient-neovim', {
@@ -219,21 +214,8 @@ call plug#end()
 " -------------------------------------------------------------------------------
 
 " -------------------------------------------------------------------------------
-" vim-lsp start
+" LanguageClientNeovim start
 " -------------------------------------------------------------------------------
-
-" You'll probably want to add some mappings for common commands:
-"map <Leader>k <plug>(lsp-hover)
-"map <Leader>g <plug>(lsp-definition)
-"map <c-w><Leader>g :split<CR><plug>(lsp-definition)
-"map <Leader>R <plug>(lsp-rename)
-"map <Leader>f <plug>(lsp-document-format)
-"map <Leader>b <plug>(lsp-references)
-"map <c-w><Leader>b :split<CR><plug>(lsp-references)
-"map <Leader>d <plug>(lsp-document-diagnostics)
-"map <Leader>t <plug>(lsp-type-definition)
-"map <Leader>a <plug>(lsp-code-action)
-
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
@@ -252,7 +234,7 @@ map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
 map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 
 " -------------------------------------------------------------------------------
-" vim-lsp end
+" LanguageClientNeovim end
 " -------------------------------------------------------------------------------
 
 
