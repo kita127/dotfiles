@@ -263,7 +263,7 @@ command! LanguageStatus :echo LanguageClient_isServerRunning()
 " the directory to &runtimepath in your Vim configuration file as follows:
 
 " If installed using git
-set rtp+=$HOME\go\src\github.com\junegunn\fzf
+set rtp+=$HOME/go/src/github.com/junegunn/fzf
 
 " Empty value to disable preview window altogether
 let g:fzf_preview_window = ''
