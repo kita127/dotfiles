@@ -13,6 +13,7 @@ vk1D & l::Right
 
 ; 無変換
 vk1D & u::PgUp
+vk1D & b::PgUp
 vk1D & d::PgDn
 vk1D & a::Home
 vk1D & e::End
@@ -76,9 +77,11 @@ vk1D & WheelUp::
     SendInput, ^{Up}
     return
 
+
+#IfWinActive
+; excel 無効 end
+
 ; 無変換 + マウスボタン    -> CTRL+PageUp, CTRL+PageDown
 vk1D & RButton::Send, ^{PgDn}
 vk1D & LButton::Send, ^{PgUp}
 
-#IfWinActive
-; excel 無効 end
