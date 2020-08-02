@@ -37,6 +37,9 @@ set wildmenu
 " テキスト挿入中の自動折り返しを日本語に対応させる
 set formatoptions+=mM
 
+" クリップボードの使い方はデフォルト設定
+set clipboard=
+
 "IMEをデフォルトでOFFにする
 set iminsert=0
 set imsearch=-1
@@ -195,17 +198,19 @@ endif
 call plug#begin('$HOME/.vim/plugged')
 
 Plug 'https://github.com/junegunn/vim-plug'
-Plug 'https://github.com/kita127/mark.vim'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/iwataka/minidown.vim'
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'https://github.com/tyru/open-browser.vim'
+Plug 'https://github.com/cocopon/vaffle.vim'
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'powershell -executionpolicy bypass -File install.ps1',
     \ }
 
+
+Plug 'https://github.com/kita127/mark.vim'
 " Initialize plugin system
 call plug#end()
 
@@ -221,7 +226,9 @@ call plug#end()
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['hie-wrapper', '--lsp']
+    \ 'haskell': ['hie-wrapper', '--lsp'],
+    \ 'go': ['gopls'],
+    \ 'c': ['clangd']
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -232,6 +239,13 @@ map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
 map <Leader>b :call LanguageClient#textDocument_references()<CR>
 map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
 map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
+
+" Selection UI used when there are multiple entries.
+" Default: If fzf is loaded, use "fzf", otherwise use "location-list".
+" Valid options: "fzf" | "quickfix" | "location-list"
+let g:LanguageClient_selectionUI = "location-list"
+
+command! LanguageStatus :echo LanguageClient_isServerRunning()
 
 " -------------------------------------------------------------------------------
 " LanguageClientNeovim end
@@ -295,6 +309,9 @@ command! Goimports !goimports -w %
 
 command! Evimrc e $HOME/_vimrc
 command! E e %:h
+
+command! UpVimrc :source $MYVIMRC
+command! UpGvimrc :source $MYGVIMRC
 
 " -------------------------------------------------------------------------------
 " 自作コマンド end
