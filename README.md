@@ -1,10 +1,8 @@
 # dotfiles
 
 ## Description
-ドットファイル管理用リポジトリ win 版
-
+ドットファイル管理用リポジトリ mac 版
 
 ### vim
-### bash
+### zsh
 ### git
-### AutoKey
