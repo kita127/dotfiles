@@ -8,4 +8,5 @@ fi
 autoload -U compinit
 compinit -u
 
-
+# alias
+alias ll='ls -la'
