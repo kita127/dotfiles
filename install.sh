@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ln -s .vimrc ~/.vimrc
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
