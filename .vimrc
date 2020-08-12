@@ -203,7 +203,6 @@ Plug 'https://github.com/iwataka/minidown.vim'
 Plug 'https://github.com/tyru/open-browser.vim'
 Plug 'https://github.com/cocopon/vaffle.vim'
 Plug 'https://github.com/kien/ctrlp.vim'
-" Plug 'https://github.com/junegunn/fzf.vim'
 
 " Plug 'autozimu/LanguageClient-neovim', {
 "     \ 'branch': 'next',
@@ -282,10 +281,6 @@ command! LanguageStatus :echo LanguageClient_isServerRunning()
 " nnoremap <silent> ,l :BLines<CR>
 " nnoremap <silent> ,h :History<CR>
 " nnoremap <silent> ,m :Mark<CR>
-
-" ----------------------------------------------------------------------------------
-" fzf end
-" ----------------------------------------------------------------------------------
 
 " ----------------------------------------------------------------------------------
 " open browser start
