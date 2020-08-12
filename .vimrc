@@ -202,6 +202,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/iwataka/minidown.vim'
 Plug 'https://github.com/tyru/open-browser.vim'
 Plug 'https://github.com/cocopon/vaffle.vim'
+Plug 'https://github.com/kien/ctrlp.vim'
 " Plug 'https://github.com/junegunn/fzf.vim'
 
 " Plug 'autozimu/LanguageClient-neovim', {
@@ -263,10 +264,10 @@ command! LanguageStatus :echo LanguageClient_isServerRunning()
 " the directory to &runtimepath in your Vim configuration file as follows:
 
 " If installed using git
-set rtp+=$HOME/go/src/github.com/junegunn/fzf
+"set rtp+=$HOME/go/src/github.com/junegunn/fzf
 
 " Empty value to disable preview window altogether
-let g:fzf_preview_window = ''
+"let g:fzf_preview_window = ''
 
 " fzf-vim の代表コマンド
 " GFiles    - git ls-files で表示されるやつ対象
@@ -274,13 +275,13 @@ let g:fzf_preview_window = ''
 " Buffers   - buffer list
 " BLines    - 全行検索
 " Marks     - mark 検索
-nnoremap <C-p>       :Files<CR>
-nnoremap <silent> ,f :GFiles<CR>
-nnoremap <silent> ,F :GFiles?<CR>
-nnoremap <silent> ,b :Buffers<CR>
-nnoremap <silent> ,l :BLines<CR>
-nnoremap <silent> ,h :History<CR>
-nnoremap <silent> ,m :Mark<CR>
+" nnoremap <C-p>       :Files<CR>
+" nnoremap <silent> ,f :GFiles<CR>
+" nnoremap <silent> ,F :GFiles?<CR>
+" nnoremap <silent> ,b :Buffers<CR>
+" nnoremap <silent> ,l :BLines<CR>
+" nnoremap <silent> ,h :History<CR>
+" nnoremap <silent> ,m :Mark<CR>
 
 " ----------------------------------------------------------------------------------
 " fzf end
@@ -306,6 +307,34 @@ let g:vaffle_show_hidden_files = 1
 " ----------------------------------------------------------------------------------
 " vaffle end
 " ----------------------------------------------------------------------------------
+" ----------------------------------------------------------------------------------
+" ctrlp
+" ----------------------------------------------------------------------------------
+"  http://kien.github.io/ctrlp.vim/
+
+" Prefix: s
+nnoremap s <Nop>
+nnoremap sa :<C-u>CtrlP<Space>
+nnoremap sb :<C-u>CtrlPBuffer<CR>
+nnoremap sd :<C-u>CtrlPDir<CR>
+"nnoremap sf :<C-u>CtrlP<CR>
+nnoremap sl :<C-u>CtrlPLine<CR>
+nnoremap sm :<C-u>CtrlPMRUFiles<CR>
+nnoremap sq :<C-u>CtrlPQuickfix<CR>
+nnoremap ss :<C-u>CtrlPMixed<CR>
+nnoremap st :<C-u>CtrlPTag<CR>
+
+" let g:ctrlp_map = '<Nop>'
+let g:ctrlp_map = '<c-p>'
+" Guess vcs root dir
+let g:ctrlp_working_path_mode = 'ra'
+" Open new file in current window
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:18'
+" dotfile も操作対象
+let g:ctrlp_show_hidden = 1
+
 
 " -------------------------------------------------------------------------------
 " 自作コマンド start
