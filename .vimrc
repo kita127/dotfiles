@@ -36,6 +36,8 @@ set showmatch
 set wildmenu
 " テキスト挿入中の自動折り返しを日本語に対応させる
 set formatoptions+=mM
+" インクリメンタルサーチ有効
+set incsearch
 
 " クリップボードの使い方はデフォルト設定
 set clipboard=
