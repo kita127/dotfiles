@@ -161,9 +161,12 @@ set nobackup
 "文字コード、改行コードをステータスバーに表示する
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 
-
+" バックアップファイルなどの出力先
 if has("mac")
 " mac用の設定
+  set backupdir=/tmp
+  set directory=/tmp
+  set undodir=/tmp
 elseif has("unix")
 " unix固有の設定
   set backupdir=/tmp
