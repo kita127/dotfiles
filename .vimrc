@@ -186,8 +186,12 @@ elseif has("win32")
 " 32bit_windows固有の設定
 endif
 
+" nasm のときはハードタブ
+autocmd BufRead,BufNewFile *.nas setlocal noexpandtab
+autocmd BufRead,BufNewFile *.nas setlocal tabstop=4
+autocmd BufRead,BufNewFile *.nas setlocal shiftwidth=4
 
-"
+
 
 " ファイル操作に関する設定 end
 " -------------------------------------------------------------------------------
@@ -334,6 +338,8 @@ let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:18'
 " dotfile も操作対象
 let g:ctrlp_show_hidden = 1
+" 正規表現モード ON
+let g:ctrlp_regexp = 1
 
 
 " -------------------------------------------------------------------------------
