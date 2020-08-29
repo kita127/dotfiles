@@ -16,8 +16,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # --------------------------------------
 # some more ls aliases
 alias ll='ls -alF'
+alias l='ls -Al'
 alias la='ls -A'
-alias l='ls -CF'
 
 # --------------------------------------
 # fzf
