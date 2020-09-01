@@ -224,10 +224,10 @@ Plug 'https://github.com/tyru/open-browser.vim'
 Plug 'https://github.com/cocopon/vaffle.vim'
 Plug 'https://github.com/kien/ctrlp.vim'
 
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'powershell -executionpolicy bypass -File install.ps1',
-"     \ }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 
 Plug 'https://github.com/kita127/mark.vim'
