@@ -372,3 +372,6 @@ command! UpGvimrc :source $MYGVIMRC
 " 自作コマンド end
 " -------------------------------------------------------------------------------
 
+" カラースキーム設定後に読み込む必要がある
+source $HOME/.vim/plugged/mark.vim/plugin/mark.vim
+
