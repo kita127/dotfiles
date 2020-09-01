@@ -154,6 +154,7 @@ cnoremap <C-Space> <C-^>
 
 "---------------------------------------------------------------------------
 " ファイル操作に関する設定 start
+" -------------------------------------------------------------------------------
 
 " バックアップファイルを作成しない (次行の先頭の " を削除すれば有効になる)
 set nobackup
@@ -191,8 +192,18 @@ autocmd BufRead,BufNewFile *.nas setlocal noexpandtab
 autocmd BufRead,BufNewFile *.nas setlocal tabstop=4
 autocmd BufRead,BufNewFile *.nas setlocal shiftwidth=4
 
+"バイナリ編集(xxd)モード（vim -b での起動、もしくは *.bin ファイルを開くと発動します）
+augroup BinaryXXD
+  autocmd!
+  autocmd BufReadPre  *.bin let &binary =1
+  autocmd BufReadPost * if &binary | silent %!xxd -g 1
+  autocmd BufReadPost * set ft=xxd | endif
+  autocmd BufWritePre * if &binary | %!xxd -r | endif
+  autocmd BufWritePost * if &binary | silent %!xxd -g 1
+  autocmd BufWritePost * set nomod | endif
+augroup END
 
-
+" -------------------------------------------------------------------------------
 " ファイル操作に関する設定 end
 " -------------------------------------------------------------------------------
 
