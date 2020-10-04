@@ -52,6 +52,55 @@ function! ImInActivate()
 endfunction
 inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 
+" 各 OS 固有の設定
+if has("mac")
+" mac用の設定
+let mapleader = "_"
+
+" Mac は option
+nnoremap <silent> <Up>    :cprevious<CR>zz
+nnoremap <silent> <Down>  :cnext<CR>zz
+nnoremap <silent> <Left>  :colder<CR>zz
+nnoremap <silent> <Right> :cnewer<CR>zz
+
+"ローケーションリスト移動
+nnoremap <silent> [b :lprevious<CR>zz
+nnoremap <silent> ]b :lnext<CR>zz
+nnoremap <silent> [B :lolder<CR>zz
+nnoremap <silent> ]B :lnewer<CR>zz
+
+elseif has("unix")
+" unix固有の設定
+
+elseif has("win64")
+" 64bit_windows固有の設定
+"
+"ノーマルモードでクイックフィックスリストをカーソルキーで移動
+" diff のコマンドと被るのでやめる
+"nnoremap <silent> [c :cprevious<CR>zz
+"nnoremap <silent> ]c :cnext<CR>zz
+"nnoremap <silent> [C :colder<CR>zz
+"nnoremap <silent> ]C :cnewer<CR>zz
+nnoremap <silent> <C-Up>    :cprevious<CR>zz
+nnoremap <silent> <C-Down>  :cnext<CR>zz
+nnoremap <silent> <C-Left>  :colder<CR>zz
+nnoremap <silent> <C-Right> :cnewer<CR>zz
+
+"ローケーションリスト移動
+"nnoremap <silent> [b :lprevious<CR>zz
+"nnoremap <silent> ]b :lnext<CR>zz
+"nnoremap <silent> [B :lolder<CR>zz
+"nnoremap <silent> ]B :lnewer<CR>zz
+nnoremap <silent> <Up>       :lprevious<CR>zz
+nnoremap <silent> <Down>     :lnext<CR>zz
+nnoremap <silent> <Left>     :lolder<CR>zz
+nnoremap <silent> <Right>    :lnewer<CR>zz
+
+elseif has("win32unix")
+" Cygwin固有の設定
+elseif has("win32")
+" 32bit_windows固有の設定
+endif
 
 " vimdiffの色設定
 highlight DiffAdd    cterm=bold ctermfg=0 ctermbg=2
@@ -100,26 +149,7 @@ set hlsearch
 "隠しファイル有
 set hidden
 "
-"ローケーションリスト移動
-"nnoremap <silent> [b :lprevious<CR>zz
-"nnoremap <silent> ]b :lnext<CR>zz
-"nnoremap <silent> [B :lolder<CR>zz
-"nnoremap <silent> ]B :lnewer<CR>zz
-nnoremap <silent> <Up>       :lprevious<CR>zz
-nnoremap <silent> <Down>     :lnext<CR>zz
-nnoremap <silent> <Left>     :lolder<CR>zz
-nnoremap <silent> <Right>    :lnewer<CR>zz
 
-"ノーマルモードでクイックフィックスリストをカーソルキーで移動
-" diff のコマンドと被るのでやめる
-"nnoremap <silent> [c :cprevious<CR>zz
-"nnoremap <silent> ]c :cnext<CR>zz
-"nnoremap <silent> [C :colder<CR>zz
-"nnoremap <silent> ]C :cnewer<CR>zz
-nnoremap <silent> <C-Up>    :cprevious<CR>zz
-nnoremap <silent> <C-Down>  :cnext<CR>zz
-nnoremap <silent> <C-Left>  :colder<CR>zz
-nnoremap <silent> <C-Right> :cnewer<CR>zz
 
 
 "
