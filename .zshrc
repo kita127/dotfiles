@@ -18,6 +18,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 alias ll='ls -alF'
 alias l='ls -Al'
 alias la='ls -A'
+alias org-gcc='x86_64-elf-gcc'
+
 
 # --------------------------------------
 # fzf
