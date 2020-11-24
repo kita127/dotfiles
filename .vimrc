@@ -46,12 +46,6 @@ set clipboard=
 set iminsert=0
 set imsearch=-1
 
-"挿入モードを抜けたらIMEをOFFにする
-function! ImInActivate()
-  call system('fcitx-remote -c')
-endfunction
-inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
-
 " 各 OS 固有の設定
 if has("mac")
 " mac用の設定
@@ -65,10 +59,24 @@ elseif has("unix")
 
 elseif has("win64")
 " 64bit_windows固有の設定
+
+"挿入モードを抜けたらIMEをOFFにする
+function! ImInActivate()
+  call system('fcitx-remote -c')
+endfunction
+inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+
 elseif has("win32unix")
 " Cygwin固有の設定
 elseif has("win32")
 " 32bit_windows固有の設定
+
+"挿入モードを抜けたらIMEをOFFにする
+function! ImInActivate()
+  call system('fcitx-remote -c')
+endfunction
+inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+
 endif
 
 " vimdiffの色設定
