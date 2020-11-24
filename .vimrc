@@ -240,10 +240,13 @@ Plug 'https://github.com/tyru/open-browser.vim'
 Plug 'https://github.com/cocopon/vaffle.vim'
 Plug 'https://github.com/kien/ctrlp.vim'
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+if has("mac") || has("unix")
+  Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
+elseif has("win64") || has("win32")
+endif
 
 
 Plug 'https://github.com/kita127/mark.vim'
