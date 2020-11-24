@@ -57,18 +57,6 @@ if has("mac")
 " mac用の設定
 let mapleader = "_"
 
-" Mac は option
-nnoremap <silent> <Up>    :cprevious<CR>zz
-nnoremap <silent> <Down>  :cnext<CR>zz
-nnoremap <silent> <Left>  :colder<CR>zz
-nnoremap <silent> <Right> :cnewer<CR>zz
-
-"ローケーションリスト移動
-nnoremap <silent> [b :lprevious<CR>zz
-nnoremap <silent> ]b :lnext<CR>zz
-nnoremap <silent> [B :lolder<CR>zz
-nnoremap <silent> ]B :lnewer<CR>zz
-
 " 既に存在する sh を起動
 nnoremap <silent> ,g :sb sh<CR>
 
@@ -77,28 +65,6 @@ elseif has("unix")
 
 elseif has("win64")
 " 64bit_windows固有の設定
-"
-"ノーマルモードでクイックフィックスリストをカーソルキーで移動
-" diff のコマンドと被るのでやめる
-"nnoremap <silent> [c :cprevious<CR>zz
-"nnoremap <silent> ]c :cnext<CR>zz
-"nnoremap <silent> [C :colder<CR>zz
-"nnoremap <silent> ]C :cnewer<CR>zz
-nnoremap <silent> <C-Up>    :cprevious<CR>zz
-nnoremap <silent> <C-Down>  :cnext<CR>zz
-nnoremap <silent> <C-Left>  :colder<CR>zz
-nnoremap <silent> <C-Right> :cnewer<CR>zz
-
-"ローケーションリスト移動
-"nnoremap <silent> [b :lprevious<CR>zz
-"nnoremap <silent> ]b :lnext<CR>zz
-"nnoremap <silent> [B :lolder<CR>zz
-"nnoremap <silent> ]B :lnewer<CR>zz
-nnoremap <silent> <Up>       :lprevious<CR>zz
-nnoremap <silent> <Down>     :lnext<CR>zz
-nnoremap <silent> <Left>     :lolder<CR>zz
-nnoremap <silent> <Right>    :lnewer<CR>zz
-
 elseif has("win32unix")
 " Cygwin固有の設定
 elseif has("win32")
@@ -111,6 +77,17 @@ highlight DiffDelete cterm=bold ctermfg=0 ctermbg=4
 highlight DiffChange cterm=bold ctermfg=0 ctermbg=3
 highlight DiffText   cterm=bold ctermfg=0 ctermbg=1
 
+" クイックフィックスリスト
+nnoremap <silent> <Up>    :cprevious<CR>zz
+nnoremap <silent> <Down>  :cnext<CR>zz
+nnoremap <silent> <Left>  :colder<CR>zz
+nnoremap <silent> <Right> :cnewer<CR>zz
+
+" ローケーションリスト移動
+nnoremap <silent> [b :lprevious<CR>zz
+nnoremap <silent> ]b :lnext<CR>zz
+nnoremap <silent> [B :lolder<CR>zz
+nnoremap <silent> ]B :lnewer<CR>zz
 
 
 "---------------------------------------------------------------------------
