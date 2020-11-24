@@ -49,6 +49,8 @@ set imsearch=-1
 " 各 OS 固有の設定
 if has("mac")
 " mac用の設定
+
+" leader に '_' を設定
 let mapleader = "_"
 
 " 既に存在する sh を起動
@@ -56,6 +58,9 @@ nnoremap <silent> ,g :sb sh<CR>
 
 elseif has("unix")
 " unix固有の設定
+
+" 既に存在する sh を起動
+nnoremap <silent> ,g :sb sh<CR>
 
 elseif has("win64")
 " 64bit_windows固有の設定
@@ -65,6 +70,9 @@ function! ImInActivate()
   call system('fcitx-remote -c')
 endfunction
 inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+
+" 既に存在する cmd を起動
+nnoremap <silent> ,g :sb cmd<CR>
 
 elseif has("win32unix")
 " Cygwin固有の設定
@@ -76,6 +84,9 @@ function! ImInActivate()
   call system('fcitx-remote -c')
 endfunction
 inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+
+" 既に存在する cmd を起動
+nnoremap <silent> ,g :sb cmd<CR>
 
 endif
 
