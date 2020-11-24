@@ -69,6 +69,9 @@ nnoremap <silent> ]b :lnext<CR>zz
 nnoremap <silent> [B :lolder<CR>zz
 nnoremap <silent> ]B :lnewer<CR>zz
 
+" 既に存在する sh を起動
+nnoremap <silent> ,g :sb sh<CR>
+
 elseif has("unix")
 " unix固有の設定
 
@@ -278,7 +281,8 @@ set hidden
 let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper', '--lsp'],
     \ 'go': ['gopls'],
-    \ 'c': ['clangd']
+    \ 'c': ['clangd'],
+    \ 'cpp': ['clangd']
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -294,6 +298,7 @@ map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
 " Default: If fzf is loaded, use "fzf", otherwise use "location-list".
 " Valid options: "fzf" | "quickfix" | "location-list"
 let g:LanguageClient_selectionUI = "location-list"
+let g:LanguageClient_diagnosticsList = "Disabled"
 
 command! LanguageStatus :echo LanguageClient_isServerRunning()
 
