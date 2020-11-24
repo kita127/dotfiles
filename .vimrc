@@ -306,37 +306,6 @@ command! LanguageStatus :echo LanguageClient_isServerRunning()
 " LanguageClientNeovim end
 " -------------------------------------------------------------------------------
 
-
-" ----------------------------------------------------------------------------------
-" fzf start
-" ----------------------------------------------------------------------------------
-
-" fzf-vim を使用するには fzf のリポジトリを clone して rtp に足さないといけな
-" 模様。メンドクサイ
-
-" Once you have fzf installed, you can enable it inside Vim simply by adding
-" the directory to &runtimepath in your Vim configuration file as follows:
-
-" If installed using git
-"set rtp+=$HOME/go/src/github.com/junegunn/fzf
-
-" Empty value to disable preview window altogether
-"let g:fzf_preview_window = ''
-
-" fzf-vim の代表コマンド
-" GFiles    - git ls-files で表示されるやつ対象
-" Gfiles?   - git status で表示
-" Buffers   - buffer list
-" BLines    - 全行検索
-" Marks     - mark 検索
-" nnoremap <C-p>       :Files<CR>
-" nnoremap <silent> ,f :GFiles<CR>
-" nnoremap <silent> ,F :GFiles?<CR>
-" nnoremap <silent> ,b :Buffers<CR>
-" nnoremap <silent> ,l :BLines<CR>
-" nnoremap <silent> ,h :History<CR>
-" nnoremap <silent> ,m :Mark<CR>
-
 " ----------------------------------------------------------------------------------
 " open browser start
 " ----------------------------------------------------------------------------------
