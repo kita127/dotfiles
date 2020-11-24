@@ -50,44 +50,56 @@ set imsearch=-1
 if has("mac")
 " mac用の設定
 
-" leader に '_' を設定
-let mapleader = "_"
+  " leader に '_' を設定
+  let mapleader = "_"
 
-" 既に存在する sh を起動
-nnoremap <silent> ,g :sb sh<CR>
+  " 既に存在する sh を起動
+  nnoremap <silent> ,g :sb sh<CR>
 
+  set backupdir=/tmp
+  set directory=/tmp
+  set undodir=/tmp
 elseif has("unix")
 " unix固有の設定
 
-" 既に存在する sh を起動
-nnoremap <silent> ,g :sb sh<CR>
+  " 既に存在する sh を起動
+  nnoremap <silent> ,g :sb sh<CR>
 
+  set backupdir=/tmp
+  set directory=/tmp
+  set undodir=/tmp
 elseif has("win64")
 " 64bit_windows固有の設定
 
-"挿入モードを抜けたらIMEをOFFにする
-function! ImInActivate()
-  call system('fcitx-remote -c')
-endfunction
-inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+  "挿入モードを抜けたらIMEをOFFにする
+  function! ImInActivate()
+    call system('fcitx-remote -c')
+  endfunction
+  inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 
-" 既に存在する cmd を起動
-nnoremap <silent> ,g :sb cmd<CR>
+  " 既に存在する cmd を起動
+  nnoremap <silent> ,g :sb cmd<CR>
 
+  set backupdir=%temp%
+  set directory=%temp%
+  set undodir=%temp%
 elseif has("win32unix")
 " Cygwin固有の設定
 elseif has("win32")
 " 32bit_windows固有の設定
 
-"挿入モードを抜けたらIMEをOFFにする
-function! ImInActivate()
-  call system('fcitx-remote -c')
-endfunction
-inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
+  "挿入モードを抜けたらIMEをOFFにする
+  function! ImInActivate()
+    call system('fcitx-remote -c')
+  endfunction
+  inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 
-" 既に存在する cmd を起動
-nnoremap <silent> ,g :sb cmd<CR>
+  " 既に存在する cmd を起動
+  nnoremap <silent> ,g :sb cmd<CR>
 
+  set backupdir=%temp%
+  set directory=%temp%
+  set undodir=%temp%
 endif
 
 " vimdiffの色設定
@@ -190,31 +202,6 @@ set nobackup
 
 "文字コード、改行コードをステータスバーに表示する
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-
-" バックアップファイルなどの出力先
-if has("mac")
-" mac用の設定
-  set backupdir=/tmp
-  set directory=/tmp
-  set undodir=/tmp
-elseif has("unix")
-" unix固有の設定
-  set backupdir=/tmp
-  set directory=/tmp
-  set undodir=/tmp
-
-elseif has("win64")
-" 64bit_windows固有の設定
-
-  set backupdir=%temp%
-  set directory=%temp%
-  set undodir=%temp%
-
-elseif has("win32unix")
-" Cygwin固有の設定
-elseif has("win32")
-" 32bit_windows固有の設定
-endif
 
 " nasm のときはハードタブ
 autocmd BufRead,BufNewFile *.nas setlocal noexpandtab
