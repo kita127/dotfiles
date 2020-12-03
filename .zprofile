@@ -1,1 +1,2 @@
-export PATH="$PATH:/usr/local/opt/llvm/bin"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin:/usr/local/opt/llvm/bin"
