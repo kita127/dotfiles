@@ -3,6 +3,7 @@ set fileencodings=utf8,iso-2022-jp,euc-jp,cp932
 set ambiwidth=double
 set clipboard=unnamedplus
 colorscheme desert
+"colorscheme ron
 
 
 "---------------------------------------------------------------------------
@@ -291,6 +292,7 @@ command! LanguageStatus :echo LanguageClient_isServerRunning()
 " -------------------------------------------------------------------------------
 " LanguageClientNeovim end
 " -------------------------------------------------------------------------------
+"
 
 " ----------------------------------------------------------------------------------
 " open browser start
@@ -326,7 +328,7 @@ nnoremap sd :<C-u>CtrlPDir<CR>
 nnoremap sl :<C-u>CtrlPLine<CR>
 nnoremap sm :<C-u>CtrlPMRUFiles<CR>
 nnoremap sq :<C-u>CtrlPQuickfix<CR>
-nnoremap ss :<C-u>CtrlPMixed<CR>
+" nnoremap ss :<C-u>CtrlPMixed<CR>
 nnoremap st :<C-u>CtrlPTag<CR>
 
 " let g:ctrlp_map = '<Nop>'
@@ -341,22 +343,34 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:18'
 let g:ctrlp_show_hidden = 1
 " 正規表現モード ON
 let g:ctrlp_regexp = 1
+let g:ctrlp_switch_buffer = 0
 
+" -------------------------------------------------------------------------------
+" fugitive start
+" -------------------------------------------------------------------------------
+
+nnoremap ss :Gstatus<CR>
+
+" -------------------------------------------------------------------------------
+" fugitive end
+" -------------------------------------------------------------------------------
 
 " -------------------------------------------------------------------------------
 " 自作コマンド start
 " -------------------------------------------------------------------------------
+
 
 " 自動フォーマッター for haskell or コマンド
 "au BufWritePost *.hs %!stylish-haskell
 command! Hfmt %!stylish-haskell
 command! Goimports !goimports -w %
 
-command! Evimrc e $HOME/_vimrc
 command! E e %:h
 
 command! UpVimrc :source $MYVIMRC
 command! UpGvimrc :source $MYGVIMRC
+
+command! Evimrc :edit $MYVIMRC
 
 " -------------------------------------------------------------------------------
 " 自作コマンド end
