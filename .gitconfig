@@ -1,0 +1,11 @@
+[user]
+	email = kitada.kosuke@gmail.com
+	name = kita127
+[core]
+	quotepath = false
+
+	autocrlf = false
+[alias]
+    glog = log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=format:'%c' --all --graph
+[init]
+	defaultBranch = main
