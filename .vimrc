@@ -253,10 +253,6 @@ Plug 'https://github.com/AndrewRadev/linediff.vim'
 Plug 'chrisbra/csv.vim'
 
 if has("mac") || has("unix")
-  Plug 'https://github.com/autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
 
   Plug 'https://github.com/brglng/vim-im-select'
 
@@ -272,53 +268,6 @@ call plug#end()
 " vim-plug end
 " -------------------------------------------------------------------------------
 
-" -------------------------------------------------------------------------------
-" LanguageClientNeovim start
-" -------------------------------------------------------------------------------
-
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-" <javascript>
-" url : https://github.com/theia-ide/typescript-language-server
-" javascript 用の Language Server は typescript をインストールして tsserver も導入する必要がある
-" 導入には以下のコマンドが必要
-" $ npm install -g typescript typescript-language-server
-" npm は Node.js のインストールにより導入される
-"
-" <html>
-" url : https://github.com/vscode-langservers/vscode-html-languageserver-bin
-"
-let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['haskell-language-server-wrapper', '--lsp'],
-    \ 'go': ['gopls'],
-    \ 'c': ['clangd'],
-    \ 'cpp': ['clangd'],
-    \ 'html': ['html-languageserver', '--stdio'],
-    \ 'javascript': ['typescript-language-server', '--stdio']
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-map <Leader>k :call LanguageClient#textDocument_hover()<CR>
-map <Leader>g :call LanguageClient#textDocument_definition()<CR>
-map <Leader>R :call LanguageClient#textDocument_rename()<CR>
-map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>F :call LanguageClient#textDocument_rangeFormatting()<CR>
-map <Leader>b :call LanguageClient#textDocument_references()<CR>
-map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
-
-" Selection UI used when there are multiple entries.
-" Default: If fzf is loaded, use "fzf", otherwise use "location-list".
-" Valid options: "fzf" | "quickfix" | "location-list"
-let g:LanguageClient_selectionUI = "location-list"
-let g:LanguageClient_diagnosticsList = "Disabled"
-
-command! LanguageStatus :echo LanguageClient_isServerRunning()
-
-" -------------------------------------------------------------------------------
-" LanguageClientNeovim end
-" -------------------------------------------------------------------------------
 
 " ----------------------------------------------------------------------------------
 " open browser start
