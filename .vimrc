@@ -256,6 +256,11 @@ if has("mac") || has("unix")
 
   Plug 'https://github.com/brglng/vim-im-select'
 
+  " vim lsp 用
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+
+
 elseif has("win64") || has("win32")
 endif
 
