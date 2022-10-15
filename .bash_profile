@@ -50,6 +50,9 @@ PATH="$PATH:$HOME/.nodebrew/current/bin"
 
 export PATH
 
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
 # end 環境変数 --------------------------------------------
 
 # ghcup
