@@ -253,7 +253,7 @@ Plug 'https://github.com/AndrewRadev/linediff.vim'
 Plug 'chrisbra/csv.vim'
 
 if has("mac") || has("unix")
-  Plug 'autozimu/LanguageClient-neovim', {
+  Plug 'https://github.com/autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
       \ 'do': 'bash install.sh',
       \ }
