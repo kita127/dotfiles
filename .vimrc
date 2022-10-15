@@ -253,12 +253,14 @@ Plug 'https://github.com/AndrewRadev/linediff.vim'
 Plug 'chrisbra/csv.vim'
 
 if has("mac") || has("unix")
-  Plug 'https://github.com/autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
 
   Plug 'https://github.com/brglng/vim-im-select'
+
+  " vim lsp 用
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'https://github.com/prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 elseif has("win64") || has("win32")
 endif
@@ -273,52 +275,28 @@ call plug#end()
 " -------------------------------------------------------------------------------
 
 " -------------------------------------------------------------------------------
-" LanguageClientNeovim start
+" vim-plug start
 " -------------------------------------------------------------------------------
+nmap <buffer> gd <plug>(lsp-definition)
+nmap <buffer> gs <plug>(lsp-document-symbol-search)
+nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+nmap <buffer> gr <plug>(lsp-references)
+nmap <buffer> gi <plug>(lsp-implementation)
+nmap <buffer> gt <plug>(lsp-type-definition)
+nmap <buffer> <leader>rn <plug>(lsp-rename)
+nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+nmap <buffer> K <plug>(lsp-hover)
+nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
-" Required for operations modifying multiple buffers like rename.
-set hidden
-
-" <javascript>
-" url : https://github.com/theia-ide/typescript-language-server
-" javascript 用の Language Server は typescript をインストールして tsserver も導入する必要がある
-" 導入には以下のコマンドが必要
-" $ npm install -g typescript typescript-language-server
-" npm は Node.js のインストールにより導入される
-"
-" <html>
-" url : https://github.com/vscode-langservers/vscode-html-languageserver-bin
-"
-let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['haskell-language-server-wrapper', '--lsp'],
-    \ 'go': ['gopls'],
-    \ 'c': ['clangd'],
-    \ 'cpp': ['clangd'],
-    \ 'html': ['html-languageserver', '--stdio'],
-    \ 'javascript': ['typescript-language-server', '--stdio']
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-map <Leader>k :call LanguageClient#textDocument_hover()<CR>
-map <Leader>g :call LanguageClient#textDocument_definition()<CR>
-map <Leader>R :call LanguageClient#textDocument_rename()<CR>
-map <Leader>f :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>F :call LanguageClient#textDocument_rangeFormatting()<CR>
-map <Leader>b :call LanguageClient#textDocument_references()<CR>
-map <Leader>a :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>s :call LanguageClient#textDocument_documentSymbol()<CR>
-
-" Selection UI used when there are multiple entries.
-" Default: If fzf is loaded, use "fzf", otherwise use "location-list".
-" Valid options: "fzf" | "quickfix" | "location-list"
-let g:LanguageClient_selectionUI = "location-list"
-let g:LanguageClient_diagnosticsList = "Disabled"
-
-command! LanguageStatus :echo LanguageClient_isServerRunning()
+nnoremap <buffer> <leader>F <plug>(lsp-document-format)
+vnoremap <buffer> <leader>f <plug>(lsp-document-range-format)
 
 " -------------------------------------------------------------------------------
-" LanguageClientNeovim end
+" vim-plug end
 " -------------------------------------------------------------------------------
+
 
 " ----------------------------------------------------------------------------------
 " open browser start
