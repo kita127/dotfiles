@@ -277,21 +277,21 @@ call plug#end()
 " -------------------------------------------------------------------------------
 " vim-plug start
 " -------------------------------------------------------------------------------
-nmap <buffer> gd <plug>(lsp-definition)
-nmap <buffer> gs <plug>(lsp-document-symbol-search)
-nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-nmap <buffer> gr <plug>(lsp-references)
-nmap <buffer> gi <plug>(lsp-implementation)
-nmap <buffer> gt <plug>(lsp-type-definition)
-nmap <buffer> <leader>rn <plug>(lsp-rename)
-nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-nmap <buffer> K <plug>(lsp-hover)
-nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+nmap  gd <plug>(lsp-definition)
+nmap  gs <plug>(lsp-document-symbol-search)
+nmap  gS <plug>(lsp-workspace-symbol-search)
+nmap  gr <plug>(lsp-references)
+nmap  gi <plug>(lsp-implementation)
+nmap  gt <plug>(lsp-type-definition)
+nmap  <leader>rn <plug>(lsp-rename)
+nmap  [g <plug>(lsp-previous-diagnostic)
+nmap  ]g <plug>(lsp-next-diagnostic)
+nmap  K <plug>(lsp-hover)
+"nnoremap  <expr><c-f> lsp#scroll(+4)
+"nnoremap  <expr><c-d> lsp#scroll(-4)
 
-nnoremap <buffer> <leader>F <plug>(lsp-document-format)
-vnoremap <buffer> <leader>f <plug>(lsp-document-range-format)
+nnoremap  <leader>F <plug>(lsp-document-format)
+vnoremap  <leader>f <plug>(lsp-document-range-format)
 
 " -------------------------------------------------------------------------------
 " vim-plug end
@@ -385,3 +385,9 @@ command! Evimrc :edit $MYVIMRC
 " カラースキーム設定後に読み込む必要がある
 source $HOME/.vim/plugged/mark.vim/plugin/mark.vim
 
+
+colorscheme molokai
+syntax on
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
