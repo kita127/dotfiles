@@ -385,7 +385,10 @@ command! Evimrc :edit $MYVIMRC
 " カラースキーム設定後に読み込む必要がある
 source $HOME/.vim/plugged/mark.vim/plugin/mark.vim
 
-
+" ホームディレクトリ配下に~/.vim/colors/を作成する
+" molokai をとってくる
+" colors/ に molokai.vim を持ってくる
+" 以下の設定をする
 colorscheme molokai
 syntax on
 let g:molokai_original = 1
