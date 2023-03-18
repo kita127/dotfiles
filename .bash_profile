@@ -45,6 +45,8 @@ PATH="$PATH:/usr/local/opt/llvm/bin"
 
 PATH="$PATH:$HOME/.nodebrew/current/bin"
 
+PATH="$PATH:$HOME/work/typescript/node_modules/.bin"
+
 # composer
 # export PATH="$PATH:~/.composer/vendor/bin"
 
