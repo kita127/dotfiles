@@ -117,21 +117,28 @@ fi
 # kitada
 # ########################################################################
 
-# clipboard copy and paste
-# echo 'xxx' | pbcopy
-#
-# echo `pwd` | pbcopy
-#
-# pbpeast
+# --------------------------------------
+# alias
+# --------------------------------------
 
-# alias pbcopy='xsel --clipboard --input'
-# alias pbpaste='xsel --clipboard --output'
+alias .b='vim ~/dotfiles/.bashrc'
+alias srcb='source ~/dotfiles/.bashrc'
 
 alias l='ls -Al'
+alias jj='jobs'
+
+# --------------------------------------
+# tmux
+
+
+# --------------------------------------
+# Laravel start
+
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 # --------------------------------------
 # stack start
-# --------------------------------------
+#
 # stack(Haskell tool)
 alias ghc='stack ghc --'
 alias ghci='stack ghci --'
@@ -144,12 +151,8 @@ alias hlint='stack exec hlint'
 # eval "$(stack --bash-completion-script stack)"
 
 # --------------------------------------
-# stack end
-# --------------------------------------
-
-# --------------------------------------
 # fzf start
-# --------------------------------------
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias fhi='history | fzf'
@@ -170,20 +173,9 @@ fcd() {
   cd "$dir"
 }
 
+# --------------------------------------
+# oter
 
 
-# --------------------------------------
-# fzf end
-# --------------------------------------
-
-# --------------------------------------
-# Laravel start
-# --------------------------------------
-
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
-
-# --------------------------------------
-# Laravel start
-# --------------------------------------
 
 [ -f "/Users/kitada/.ghcup/env" ] && source "/Users/kitada/.ghcup/env" # ghcup-env
